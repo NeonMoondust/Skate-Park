@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{>head}}
+    <body>
+        <h1>Skate Park</h1>
+        <div class="py-4">
+            <h2>Administración</h2>
+            <hr class="w-50" />
+            <table class="table w-50 m-auto">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Años de experiencia</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each skaters}}
+                    <tr>
+                        <th scope="row">{{this.id}}</th>
+                        <td><img src="/assets/images/{{this.email}}.jpg" alt="{{this.nombre}}" width="75px" height="75px"></td>
+                        <td>{{this.nombre}}</td>
+                        <td>{{this.anos_experiencia}}</td>
+                        <td>{{this.especialidad}}</td>
+                        <td><input type="checkbox" onclick="stateChx({{this.id}})" id="stateCheckBox" defaultState="{{this.estado}}" /></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <script src="./js/admin.js"></script>
+    </body>
+</html>
