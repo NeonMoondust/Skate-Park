@@ -1,6 +1,6 @@
 const {Pool, Client} = require('pg');
 const fs = require('fs');
-require('./../.env').config();
+require('dotenv').config();
 
 const { prepared_statement } = JSON.parse(fs.readFileSync('./models/prepared_statement.json'));
 
